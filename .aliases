@@ -1,13 +1,14 @@
 ### vim:ft=zsh fenc=utf-8
 # system wide alias 
 
-case "${OSTYPE}" in
-    freebsd*|darwin*)
-        alias ls='ls -GF' ll='ls -Gl' la='ls -Ga' lsr='ls -GlR' lla='ls -Gla'
-        alias macvim="mvim --remote-tab-silent"
-        ;;
-    linux*)
-        alias ls='ls --color' ll='ls --color -l' la='ls --color -a' lla='ls --color -la'
-        ;;
-esac
+#case "${OSTYPE}" in
+#    freebsd*|darwin*)
+#        alias ls='ls -GF' ll='ls -Gl' la='ls -Ga' lsr='ls -GlR' lla='ls -Gla'
+#        alias macvim="mvim --remote-tab-silent"
+#        ;;
+#    linux*)
+#        alias ls='ls --color' ll='ls --color -l' la='ls --color -a' lla='ls --color -la'
+#        ;;
+#esac
 
+alias ls='ls --color' ll='ls --color -l' la='ls --color -a' lla='ls --color -la'
