@@ -1,0 +1,86 @@
+###
+
+# move to root
+function git-root()
+{
+	if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+		cd `pwd`/`git rev-parse --show-cdup`
+	else
+		echo "Here is not git work tree"
+	fi
+}
+
+## git tools
+function git-hash()
+{
+    git log --oneline --branches | peco | awk '{print $1}'
+}
+alias -g HASH='$(git-hash)'
+
+function git-changed-files()
+{
+    git status --short | peco | awk '{print $2}'
+}
+alias -g CHANGED='$(git-changed-files)'
+
+function git-branch()
+{
+    git branch | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"
+}
+alias -g BRANCH='$(git-branch)'
+
+## SSH
+function host-selection()
+{
+    cat ~/.ssh/config | grep '^Host' | cut -c6- | peco
+}
+alias -g HOST='$(host-selection)'
+
+## makefile
+function make-select()
+{
+    grep ':$' Makefile | sed -e 's/.$//' | peco
+}
+alias -g MENU='$(make-select)'
+
+## require mac
+function cdf() {
+    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    if [ "$target" != "" ]
+    then
+        cd "$target"
+        pwd
+    else
+        echo 'No Finder window found' >&2
+    fi
+}
+
+#######################################
+# peco hitory
+#######################################
+
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(fc -l -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    # zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^R' peco-select-history
+
+function ptvim() {
+  path=$(pt $* | peco | awk -F: '{printf  $1 " +" $2}'| sed -e 's/\+$//')
+  if [ -n "$path" ]; then
+    echo "vim $path"
+    vim $path
+  fi
+}
+
+alias f="open ."
+alias up="cd ..; ls -l"
+

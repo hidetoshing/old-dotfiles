@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+source ~/local/src/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen-bundle zsh-users/zsh-completions
+
+antigen-bundle autojump
+antigen-bundle gnu-utils
+#antigen-bundle git-extras
+#antigen-bundle github
+#antigen-bundle brew
+#antigen-bundle history
+#antigen-bundle python
+#antigen-bundle vagrant
+
+#antigen-theme terminalparty
+antigen-theme hidetoshing/zsh-prompt-themes bonvoyage/bonvoyage
+
+antigen-apply
