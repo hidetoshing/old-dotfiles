@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-source ~/local/src/antigen/antigen.zsh
+source /usr/local/share/antigen.zsh
 
 antigen use oh-my-zsh
 
