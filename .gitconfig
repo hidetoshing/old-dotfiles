@@ -41,3 +41,5 @@
     cmm = commit -m
 [color]
 	ui = true
+[ghq]
+    root = ~/local/src

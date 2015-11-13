@@ -3,7 +3,7 @@
 NAME=${HOSTNAME:-$HOST}
 
 ## use antigen
-[ -f ${HOME}/local/src/antigen/antigen.zsh ] && source ${HOME}/.zsh.d/.zshrc.antigen
+[ -f /usr/local/share/antigen.zsh ] && source ${HOME}/.zsh.d/.zshrc.antigen
 
 ## ##### ##### ##### ##### #####
 ## directory setting
