@@ -29,6 +29,17 @@ function git-branch()
 }
 alias -g BRANCH='$(git-branch)'
 
+function github-src () {
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [ -n "${selected_dir}" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N github-src
+bindkey '^]' github-src
+
 ## SSH
 function host-selection()
 {
