@@ -1,2 +1,3 @@
 # local zsh files
+.zcompdump
 .zshrc.local.*
