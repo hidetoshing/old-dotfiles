@@ -8,12 +8,15 @@ export LANG=ja_JP.UTF-8
 ### PATH
 ## default PATH
 path=(
-	# user setting
-	~/local/bin(N-/)
+    # user setting
+    ~/local/bin(N-/)
     # Solaris
     /opt/{csw,sfw}/bin(N-/)
     # Linux
     {/usr/local,/usr,}{/sbin,/bin}(N-/)
+    
+    # optional
+    /usr/local/opt/go/libexec/bin(N-/) # for brewed go.
 )
 
 typeset -gxU path
@@ -28,9 +31,8 @@ manpath=(
 )
 typeset -gxU manpathA
 
-### EDITOR setting
+## EDITOR setting
 export EDITOR=vim
 if ! type vim > /dev/null 2>&1; then
     alias vim=vi
 fi
-
