@@ -54,7 +54,7 @@ bindkey "\\en" history-beginning-search-forward-end
 bindkey "\e[Z" reverse-menu-complete
 
 ## zsh editor
-autoload zed
+# autoload zed
 
 ## Prediction configuration
 

@@ -1,4 +1,4 @@
-### vim:ft=zsh fenc=utf-8
+### vim:ft=zsh
 
 #---------------------------------------
 # Language Setting
@@ -10,12 +10,12 @@ export LANG=ja_JP.UTF-8
 path=(
     # user setting
     ~/local/bin(N-/)
-    # Solaris
-    /opt/{csw,sfw}/bin(N-/)
+
     # Linux
     {/usr/local,/usr,}{/sbin,/bin}(N-/)
-    
+
     # optional
+    /usr/local/go/bin(N-/)             # for go.
     /usr/local/opt/go/libexec/bin(N-/) # for brewed go.
 )
 
