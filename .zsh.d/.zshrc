@@ -68,6 +68,7 @@ setopt complete_aliases     # aliased ls needs if file/dir completions work
 [ -f ${HOME}/.zsh.d/.zshrc.local.${NAME} ] && source ${HOME}/.zsh.d/.zshrc.local.${NAME}
 
 ## plugins
+autoload -Uz is-at-least
 if is-at-least 5.0.2; then
     REPORTTIME=3
     [ -f ${HOME}/.autojump/etc/profile.d/autojump.sh ] && source ${HOME}/.autojump/etc/profile.d/autojump.sh
