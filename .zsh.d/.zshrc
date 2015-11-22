@@ -63,6 +63,10 @@ setopt complete_aliases     # aliased ls needs if file/dir completions work
 
 ## ##### ##### ##### ##### #####
 ## External Setting
+
+## GO
+export GOPATH=${HOME}/local
+
 [ -f ${HOME}/.aliases ] && source ${HOME}/.aliases
 [ -f ${HOME}/.zsh.d/.zshrc.misc ] && source ${HOME}/.zsh.d/.zshrc.misc
 [ -f ${HOME}/.zsh.d/.zshrc.local.${NAME} ] && source ${HOME}/.zsh.d/.zshrc.local.${NAME}
